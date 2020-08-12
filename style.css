@@ -1,5 +1,40 @@
-div {
-    text-align: center;
-    color: green;
-    position: relative;
+body {
+  text-align: center;
 }
+
+.head_title {
+  color: #633636;
+}
+
+.password {
+  pointer-events: none;
+  border: 0;
+  text-align: center;
+  color: green;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: cornflowerblue;
+  border-radius: 5px;
+  border: 0px;
+  width: auto;
+  height: 30px;
+  color: white;
+  font-weight: bolder;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.password::-moz-selection {
+  color: 0;
+}
+
+.password::selection {
+  color: 0;
+}
+
+.password:focus {
+  outline: none;
+}
+/*# sourceMappingURL=style.css.map */

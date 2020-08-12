@@ -20,4 +20,3 @@ function loader() {
 function copier() {
     pass.select();
     document.execCommand('copy');
-}
