@@ -3,7 +3,8 @@ body {
 }
 
 .head_title {
-  color: #633636;
+  color: #85c4ff;
+  padding-top: 10px;
 }
 
 .password {
@@ -12,6 +13,7 @@ body {
   text-align: center;
   color: green;
   font-size: 24px;
+  border-radius: 10px;
 }
 
 .btn {
@@ -36,5 +38,26 @@ body {
 
 .password:focus {
   outline: none;
+}
+
+.btn:hover {
+  background-color: #6a9473;
+  cursor: pointer;
+}
+
+.passgenerator {
+  background-color: #145d73;
+  width: 447px;
+  margin: auto;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.copied {
+  color: #ff5252;
 }
 /*# sourceMappingURL=style.css.map */

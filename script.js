@@ -15,8 +15,16 @@ function loader() {
     }
 
     document.getElementById('pass').value = container;
+    document.getElementById('copied').innerHTML = '';
 }
 
 function copier() {
     pass.select();
     document.execCommand('copy');
+    document.getElementById('copied').innerHTML = 'COPIED!!!';
+}
+
+function clear() {
+    console.log('hi');
+    document.getElementById('pass').value = '';
+}
