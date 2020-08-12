@@ -24,7 +24,7 @@ function copier() {
     document.getElementById('copied').innerHTML = 'COPIED!!!';
 }
 
-function clear() {
-    console.log('hi');
-    document.getElementById('pass').value = '';
+function clr() {
+  document.getElementById('pass').value = '';
+  document.getElementById('copied').innerHTML = '';
 }
