@@ -21,7 +21,12 @@ function loader() {
 function copier() {
     pass.select();
     document.execCommand('copy');
-    document.getElementById('copied').innerHTML = 'COPIED!!!';
+    let a = document.getElementById('pass').value;
+    if (a == '') {
+        document.getElementById('copied').innerHTML = 'Nothing to Copy';
+    } else {
+        document.getElementById('copied').innerHTML = 'COPIED!!!';
+    }
 }
 
 function clr() {
