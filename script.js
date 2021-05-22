@@ -1,25 +1,61 @@
 'use strict';
-function loader() {
-    var charac = [];
-    var container = '';
 
-    for (let i = 36; i<= 126; i++) {
-        if (i == 44 || i == 124 || i == 38 || i == 39 || i == 43 || i == 45 || i == 58 || i == 59 || i == 60 || i == 61 || i == 62 || i == 39) {
-            continue;
-        }
-        charac.push(i);
+let generate = document.getElementById('generate');
+let copy = document.getElementById('copier');
+let clear = document.getElementById('clear');
+let rangeVal = document.getElementById('rangeVal');
+let passLen = document.getElementById('passLen');
+var passwordLength = 8;
+
+
+passLen.addEventListener('change', () => {
+    passwordLength = passLen.value;
+    rangeVal.innerHTML = passwordLength;
+});
+
+
+generate.addEventListener('click', () => {
+    let charac = [];
+    let container = '';
+
+    let cCap = document.getElementById('capLet');
+    let cSm = document.getElementById('smLet');
+    let cNum = document.getElementById('number');
+    let cPunc = document.getElementById('punc');
+
+    let capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let small = capital.toLowerCase();
+    let punctuation = `".</?>,!';@#$&*-_`;
+    let number = "0123456789";
+
+    var total = "";
+
+    if(cCap.checked) {
+        total += capital;
     }
 
-    for (let i = 1; i<= 10; i++) {
-        container += String.fromCharCode(charac[Math.floor(Math.random() * charac.length )]);
+    if(cSm.checked) {
+         total += small;
+    }
+
+    if(cNum.checked) {
+         total += number;
+    }
+
+    if(cPunc.checked) {
+         total += punctuation;
+    }
+
+    for (let i = 1; i<= passwordLength; i++) {
+        container += total[Math.floor(Math.random() * total.length )];
     }
 
     document.getElementById('pass').value = container;
     document.getElementById('copied').innerHTML = '';
-}
+});
 
-function copier() {
-    pass.select();
+copy.addEventListener('click', () => {
+        pass.select();
     document.execCommand('copy');
     let a = document.getElementById('pass').value;
     if (a == '') {
@@ -27,9 +63,10 @@ function copier() {
     } else {
         document.getElementById('copied').innerHTML = 'COPIED!!!';
     }
-}
+})
 
-function clr() {
-  document.getElementById('pass').value = '';
+clear.addEventListener('click', () => {
+      document.getElementById('pass').value = '';
   document.getElementById('copied').innerHTML = '';
-}
+});
+

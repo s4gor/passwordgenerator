@@ -5,19 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" async></script>
 </head>
 <body>
     <div class="passgenerator">
         <p class="head_title">
             Password <br>
             Generator
-        </p>    
-        <button id="sub" onclick="loader();" class="btn">Generate Password!</button><br />
+        </p>
+        <input type="checkbox" name="capLet" id="capLet" checked> Capital Letter
+        <input type="checkbox" name="smLet" id="smLet" checked> Small Letter <br>
+        <input type="checkbox" name="number" id="number" checked> Number
+        <input type="checkbox" name="punc" id="punc" checked> Punctuation <br>
+        <div class="slidecontainer">
+            <input type="range" min="4" max="20" value="8" id="passLen">
+            <span id="rangeVal">8</span>
+        </div>
+
+        <button id="generate" class="btn">Generate Password!</button><br />
         <input type="text" placeholder="PW" id="pass" class="password"><br>
         <h2 class="copied" id="copied"></h2>
-        <input type="button" value="Copy" class="btn" onclick="copier();">
-        <input type="button" value="Clear" class="btn" onclick="clr();">
+        <input type="button" value="Copy" class="btn" id="copier">
+        <input type="button" value="Clear" class="btn" id="clear">
     </div>
 </body>
 </html>
